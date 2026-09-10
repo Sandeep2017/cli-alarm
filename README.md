@@ -17,7 +17,7 @@ pip install -e ".[dev]"
 
 #### Scheduler loop 
 ```bash
-alarm run                  # foreground loop; prints a line when an alarm rings, run this in a different terminal first
+alarm run # foreground loop; prints a line when an alarm rings, run this in a different terminal first
 ```
 
 #### Schedule alarms 
