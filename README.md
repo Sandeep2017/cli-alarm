@@ -10,8 +10,17 @@ source .venv/bin/activate
 pip install -e ".[dev]"
 ```
 
+
+
+
 ## Usage
 
+#### Scheduler loop 
+```bash
+alarm run                  # foreground loop; prints a line when an alarm rings, run this in a different terminal first
+```
+
+#### Schedule alarms 
 ```bash
 # Recurring, at a time of day
 alarm set 1:30pm --label "Wake up" --days weekdays
@@ -30,11 +39,10 @@ alarm show <id>
 alarm update <id> --label "New label" --enable   # or --disable
 alarm delete <id>
 
-alarm run                  # foreground loop; prints a line when an alarm rings
-```
 
 Alarms are stored in `~/.alarm-cli/alarms.json` by default. Override with
 `--store <path>` on any command, or the `ALARM_STORE` env var.
+```
 
 ## Test
 
@@ -42,9 +50,9 @@ Alarms are stored in `~/.alarm-cli/alarms.json` by default. Override with
 pytest
 ```
 
-## Known limitations (see PLAN.md §1/§11)
+## Known limitations & Future Scope (see PLAN.md 1/11)
 
 - No timezone support — uses the local system clock.
 - No snooze or sound; "ringing" is a printed line from `alarm run`.
 - A one-time (`--in`) alarm whose fire time passes while `alarm run` isn't
-  active is silently missed — there's no persisted record of it.
+  active is silently missed, there's no persisted record of it.

@@ -1,8 +1,6 @@
 # PLAN.md — Python Alarm Clock CLI
 
-Design plan for a `pip`-installable `alarm` CLI. This document is the source of
-truth for implementation — code should follow it; if reality diverges, update
-this file in the same commit.
+Design plan for a `pip`-installable `alarm` CLI.
 
 ## 1. Goals & non-goals
 
